@@ -22,9 +22,9 @@ out/
 .idea/
 *.sln.iml
 
-# BenchmarkDotNet Artifacts
-BenchmarkDotNet.Artifacts/
-artifacts/
+# BenchmarkDotNet Artifacts (keep results, ignore logs)
+BenchmarkDotNet.Artifacts/*.log
+!BenchmarkDotNet.Artifacts/results/
 
 # Build results
 [Dd]ebug/
