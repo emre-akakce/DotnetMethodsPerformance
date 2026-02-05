@@ -9,7 +9,7 @@ public class CollectionBuildingBenchmarks
 {
     private List<CardCampaign> _sourceCampaigns = null!;
 
-    [Params(100, 1_000, 10_000, 100_000)]
+    [Params(100, 500, 1_000)]
     public int Size { get; set; }
 
     [GlobalSetup]

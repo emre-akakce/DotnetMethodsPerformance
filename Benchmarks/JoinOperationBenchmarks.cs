@@ -11,7 +11,7 @@ public class JoinOperationBenchmarks
     private List<CardCampaign> _campaigns = null!;
     private Dictionary<int, List<CardCampaign>> _campaignsByVendor = null!;
 
-    [Params(100, 1_000, 10_000, 100_000)]
+    [Params(100, 500, 1_000)]
     public int Size { get; set; }
 
     [GlobalSetup]
