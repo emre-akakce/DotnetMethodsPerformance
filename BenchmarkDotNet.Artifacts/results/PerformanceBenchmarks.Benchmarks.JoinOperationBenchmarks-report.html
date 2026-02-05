@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>PerformanceBenchmarks.Benchmarks.JoinOperationBenchmarks-20260205-220624</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.26100.7623)
+12th Gen Intel Core i5-12400F, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 8.0.303
+  [Host]     : .NET 8.0.7 (8.0.724.31311), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.7 (8.0.724.31311), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                     </th><th>Size</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen0</th><th>Gen1</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>ManualLoop_WithDictionary</td><td>100</td><td>2.792 &mu;s</td><td>0.0538 &mu;s</td><td>0.1310 &mu;s</td><td>2.756 &mu;s</td><td>1.00</td><td>0.00</td><td>1</td><td>1.7891</td><td>0.0839</td><td>16.46 KB</td><td>1.00</td>
+</tr><tr><td>ManualLoop_WithLinearSearch</td><td>100</td><td>4.938 &mu;s</td><td>0.0915 &mu;s</td><td>0.1718 &mu;s</td><td>4.893 &mu;s</td><td>1.75</td><td>0.10</td><td>3</td><td>3.6545</td><td>0.1984</td><td>33.65 KB</td><td>2.04</td>
+</tr><tr><td>LINQ_Join</td><td>100</td><td>4.074 &mu;s</td><td>0.0768 &mu;s</td><td>0.0754 &mu;s</td><td>4.062 &mu;s</td><td>1.39</td><td>0.06</td><td>2</td><td>1.9836</td><td>0.0992</td><td>18.23 KB</td><td>1.11</td>
+</tr><tr><td>LINQ_Join_WithPreGroupedCampaigns</td><td>100</td><td>2.782 &mu;s</td><td>0.0547 &mu;s</td><td>0.0608 &mu;s</td><td>2.765 &mu;s</td><td>0.96</td><td>0.04</td><td>1</td><td>1.8044</td><td>0.0877</td><td>16.59 KB</td><td>1.01</td>
+</tr><tr><td>LINQ_SelectMany_Flatten</td><td>100</td><td>23.187 &mu;s</td><td>0.3733 &mu;s</td><td>0.3492 &mu;s</td><td>23.082 &mu;s</td><td>7.87</td><td>0.32</td><td>4</td><td>8.3923</td><td>0.9155</td><td>77.2 KB</td><td>4.69</td>
+</tr><tr><td>ManualLoop_WithDictionary</td><td>500</td><td>14.161 &mu;s</td><td>0.2549 &mu;s</td><td>0.2503 &mu;s</td><td>14.205 &mu;s</td><td>1.00</td><td>0.00</td><td>1</td><td>7.3395</td><td>1.3275</td><td>67.52 KB</td><td>1.00</td>
+</tr><tr><td>ManualLoop_WithLinearSearch</td><td>500</td><td>27.971 &mu;s</td><td>0.5060 &mu;s</td><td>0.4733 &mu;s</td><td>27.936 &mu;s</td><td>1.97</td><td>0.04</td><td>4</td><td>17.1814</td><td>3.4485</td><td>157.91 KB</td><td>2.34</td>
+</tr><tr><td>LINQ_Join</td><td>500</td><td>23.990 &mu;s</td><td>0.4193 &mu;s</td><td>0.7232 &mu;s</td><td>23.859 &mu;s</td><td>1.72</td><td>0.06</td><td>3</td><td>8.4839</td><td>1.5564</td><td>78.17 KB</td><td>1.16</td>
+</tr><tr><td>LINQ_Join_WithPreGroupedCampaigns</td><td>500</td><td>15.049 &mu;s</td><td>0.2648 &mu;s</td><td>0.2068 &mu;s</td><td>15.106 &mu;s</td><td>1.06</td><td>0.02</td><td>2</td><td>7.9803</td><td>1.4648</td><td>73.44 KB</td><td>1.09</td>
+</tr><tr><td>LINQ_SelectMany_Flatten</td><td>500</td><td>113.853 &mu;s</td><td>2.2739 &mu;s</td><td>3.5401 &mu;s</td><td>113.426 &mu;s</td><td>8.21</td><td>0.29</td><td>5</td><td>37.2314</td><td>12.9395</td><td>342.79 KB</td><td>5.08</td>
+</tr><tr><td>ManualLoop_WithDictionary</td><td>1000</td><td>32.255 &mu;s</td><td>0.5633 &mu;s</td><td>0.4993 &mu;s</td><td>32.321 &mu;s</td><td>1.00</td><td>0.00</td><td>1</td><td>16.4185</td><td>5.4321</td><td>151.14 KB</td><td>1.00</td>
+</tr><tr><td>ManualLoop_WithLinearSearch</td><td>1000</td><td>90.510 &mu;s</td><td>1.8005 &mu;s</td><td>3.3374 &mu;s</td><td>90.114 &mu;s</td><td>2.74</td><td>0.09</td><td>4</td><td>35.2783</td><td>11.7188</td><td>324.23 KB</td><td>2.15</td>
+</tr><tr><td>LINQ_Join</td><td>1000</td><td>53.998 &mu;s</td><td>1.1966 &mu;s</td><td>3.5283 &mu;s</td><td>53.778 &mu;s</td><td>1.70</td><td>0.08</td><td>3</td><td>18.2495</td><td>6.0425</td><td>167.99 KB</td><td>1.11</td>
+</tr><tr><td>LINQ_Join_WithPreGroupedCampaigns</td><td>1000</td><td>34.812 &mu;s</td><td>0.6654 &mu;s</td><td>1.6447 &mu;s</td><td>34.289 &mu;s</td><td>1.09</td><td>0.05</td><td>2</td><td>17.1509</td><td>5.6763</td><td>157.99 KB</td><td>1.05</td>
+</tr><tr><td>LINQ_SelectMany_Flatten</td><td>1000</td><td>353.438 &mu;s</td><td>6.7110 &mu;s</td><td>5.9492 &mu;s</td><td>352.329 &mu;s</td><td>10.96</td><td>0.19</td><td>5</td><td>82.0313</td><td>41.0156</td><td>757.71 KB</td><td>5.01</td>
+</tr></tbody></table>
+</body>
+</html>
